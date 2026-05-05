@@ -31,3 +31,15 @@ let stdInfo = (name, roll, program="BE-Computer")=>{
 stdInfo("Hari"); // One undefined and another is default
 stdInfo("Ram", 18); // Default
 stdInfo("Shyam", 19, "BE-Civil")
+
+let func = () => {
+    console.log("idk")
+    return 4;
+    console.log("idk again");
+};
+
+func(); // only prints idk 
+console.log(func()); // prints both returned value and first "idk" but won't execute anything that after return cuz it returns from there
+//OR
+let returnedValue = func()
+console.log(returnedValue)
