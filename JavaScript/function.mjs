@@ -4,7 +4,7 @@ let func1 = () => { /* Arrow Function Definition */
 };
 
 console.log("idk")
-func1();
+func1(); // Function call
 func1; // Not a right way to call function
 
 
