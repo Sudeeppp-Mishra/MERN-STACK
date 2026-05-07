@@ -35,3 +35,23 @@ let pattern = arr5.map((item, i)=>{
 });
 
 console.log(pattern)
+
+
+let users=[
+    {name: "Ram", age: 19},
+    {name: "Hari", age: 20},
+    {name: "Sita", age: 18}
+]; // Array of Objects
+
+// o/p required: ["Ram", "Hari", "Sita"]
+
+let _users = users.map((item, i)=>{
+    return item;
+});
+console.log(_users)
+
+let names = users.map((item, i)=>{
+    return item.name;
+});
+
+console.log(names);
