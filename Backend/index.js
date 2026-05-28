@@ -3,7 +3,7 @@
     attach port to it
 */
 
-import express from "express";
+import express, { json } from "express";
 import firstRoute from "./src/routes/firstRoute.js";
 let app = express();
 
@@ -44,4 +44,8 @@ app.get("/test/test1", (req, res, next)=>{
 });
 */
 
+app.use(json()); // it makes our system/backend capable to take json data
 app.use(firstRoute);
+
+
+
