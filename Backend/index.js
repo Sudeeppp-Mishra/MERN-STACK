@@ -5,10 +5,14 @@
 
 import express, { json } from "express";
 import firstRoute from "./src/routes/firstRoute.js";
+import productRoute from "./src/routes/productRoute.js";
+import userRoutes from "./src/routes/userRoutes.js";
+import mongoose from "mongoose";
 let app = express();
 
 app.listen(8000, () => {
     console.log("Application is listening at port 8000!");
+    mongoose.connect("mongodb://localhost:27017")
 });
 
 /*
@@ -47,5 +51,5 @@ app.get("/test/test1", (req, res, next)=>{
 app.use(json()); // it makes our system/backend capable to take json data
 app.use(firstRoute);
 
-
-
+app.use("/product", productRoute);
+app.use("/user", userRoutes)
