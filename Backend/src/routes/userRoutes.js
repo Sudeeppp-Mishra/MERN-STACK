@@ -15,13 +15,20 @@ userRoutes
     */
 
     // console.log(req.body) // get data in console
-    let result = await User.create(req.body); // put await in front of table of db
+    try {
+      let result = await User.create(req.body); // put await in front of table of db
 
-    res.json({
-      success: true,
-      message: "Data added to User table successfully!",
-      result: result,
-    });
+      res.json({
+        success: true,
+        message: "Data added to User table successfully!",
+        result: result,
+      });
+    } catch (error) {
+      res.json({
+        success: false,
+        message: `Err: ${error.message}`,
+      });
+    }
   })
   .get((req, res, next) => {});
 
