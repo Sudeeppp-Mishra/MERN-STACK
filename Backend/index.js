@@ -49,7 +49,7 @@ app.get("/test/test1", (req, res, next)=>{
 */
 
 app.use(json()); // it makes our system/backend capable to take json data
-app.use(firstRoute);
+//app.use(firstRoute);
 
 app.use("/product", productRoute);
 app.use("/user", userRoutes)
