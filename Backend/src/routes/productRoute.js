@@ -1,19 +1,88 @@
 import { Router } from "express";
+import Product from "../schema/productSchema.js";
 
 const productRoute = Router();
 
 productRoute
 .route("/")
-.post((req, res, next)=>{
-    res.json("Product created successfully!")
+.post(async(req, res, next)=>{
+    try{
+        let result = await Product.create(req.body);
+        res.json({
+            success: true,
+            message: "Product created successfully!",
+            result: result
+        })
+    } catch(error){
+        res.json({
+            success: false,
+            message: error.message
+        })
+    }
 })
-.get((req, res, next)=>{})
+.get(async(req, res, next)=>{
+    try{
+        let result = await Product.find();
+        res.json({
+            success: true,
+            message: "Product read successfully!",
+            result: result
+        })
+    } catch(error){
+        res.json({
+            success: false,
+            message: error.message
+        })
+    }
+})
 
 productRoute
 .route("/:id")
-.get((req, res, next)=>{})
-.patch((req, res, next)=>{})
-.delete((req, res, next)=>{})
+.get(async(req, res, next)=>{
+    try{
+        let result = await Product.findById(req.params.id);
+        res.json({
+            success: true,
+            message: "Specific product read successfully!",
+            result: result
+        })
+    } catch(error){
+            res.json({
+            success: false,
+            message: error.message
+        })
+    }
+})
+.patch(async(req, res, next)=>{
+        try{
+        let result = await Product.findByIdAndUpdate(req.params.id, req.body);
+        res.json({
+            success: true,
+            message: "Specific product updated successfully!",
+            result: result
+        })
+    } catch(error){
+            res.json({
+            success: false,
+            message: error.message
+        })
+    }
+})
+.delete(async(req, res, next)=>{
+        try{
+        let result = await Product.findByIdAndDelete(req.params.id);
+        res.json({
+            success: true,
+            message: "Specific product deleted successfully!",
+            result: result
+        })
+    } catch(error){
+            res.json({
+            success: false,
+            message: error.message
+        })
+    }
+})
 
 export default productRoute;
 

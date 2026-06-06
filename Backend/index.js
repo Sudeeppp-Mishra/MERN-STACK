@@ -8,6 +8,7 @@ import firstRoute from "./src/routes/firstRoute.js";
 import productRoute from "./src/routes/productRoute.js";
 import userRoutes from "./src/routes/userRoutes.js";
 import mongoose from "mongoose";
+import schoolRoute from "./src/routes/schoolRoute.js";
 let app = express();
 
 app.listen(8000, () => {
@@ -53,3 +54,4 @@ app.use(json()); // it makes our system/backend capable to take json data
 
 app.use("/product", productRoute);
 app.use("/user", userRoutes)
+app.use("/school", schoolRoute)
