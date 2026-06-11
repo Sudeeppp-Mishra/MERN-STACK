@@ -1,3 +1,8 @@
+import Address from "./Address";
+import Father from "./Father";
+import Info from "./Info";
+import Mother from "./Mother";
+
 const App = () => {
   // In react we can treat HTML tags as data so we can store them in variables like: let a = <p>test</p>
   let name = "Ram";
@@ -56,8 +61,18 @@ const App = () => {
           <p><b>Email: </b>{items.email}</p>
           </div>
       })}
+          <Address country="Nepal" city="Kathmandu" province={7}></Address>
+          <Father name="Hari" surname="Thapa" age={50}></Father>
+          <Mother name="Sita" surname="Thapa" age={40}></Mother>
+          <Info name="Ram" surname="Thapa" ward={9}></Info>
+
+          <p className="success">This is success message!</p>
+          <p className="error">This is error message!</p>
+          <p className="warning">This is warning message!</p>
     </div>
   );
 };
 
 export default App;
+
+// the values we pass like name, surname in tag are called props <p prop1="" ..>children</p> /<p> is opening tag and </p> is closing tag
