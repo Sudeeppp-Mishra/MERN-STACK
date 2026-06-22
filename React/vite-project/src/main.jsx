@@ -4,10 +4,13 @@ import './index.css'
 import App from './App.jsx'
 import "./global.css"
 import MyApp from "./MyApp.jsx"
+import {BrowserRouter} from "react-router-dom"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     {/* <App /> */}
-    <MyApp></MyApp>
+    <BrowserRouter>
+      <MyApp></MyApp>
+    </BrowserRouter>
   </StrictMode>,
 )
