@@ -63,7 +63,7 @@ const App = () => {
       })}
           <Address country="Nepal" city="Kathmandu" province={7}></Address>
           <Father name="Hari" surname="Thapa" age={50}></Father>
-          <Mother name="Sita" surname="Thapa" age={40}></Mother>
+          <Mother name="Sita" surname="Thapa" age={40}><h1>This is children for Mother which is called in Mother.jsx</h1></Mother>
           <Info name="Ram" surname="Thapa" ward={9}></Info>
 
           <p className="success">This is success message!</p>

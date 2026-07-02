@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const LearnUseState = () => {
   let [name, setName] = useState("Ram");
-  let [count, setCount] = useState(1);
+  let [count, setCount] = useState(1); // Here if we would have made just a normal variable then it won't have shown the changed value of count after we do increment values from the button below...
 
   return (
     <div>
