@@ -13,3 +13,11 @@ We can only return one tag so if we want to return multiple tags we can use div 
 external CSS
 
 useState hook
+react-router dom
+
+form
+    product: name price quantity description
+    user: name address email password phone
+    school: name address phone email noOfRooms
+hit api
+useEffect hook
