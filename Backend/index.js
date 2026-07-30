@@ -9,6 +9,8 @@ import productRoute from "./src/routes/productRoute.js";
 import userRoutes from "./src/routes/userRoutes.js";
 import mongoose from "mongoose";
 import schoolRoute from "./src/routes/schoolRoute.js";
+import cors from "cors"
+
 let app = express();
 
 app.listen(8000, () => {
@@ -16,6 +18,7 @@ app.listen(8000, () => {
     mongoose.connect("mongodb://localhost:27017/test")
 });
 
+app.use(cors()) // enable browser to request backend
 /*
 
 DD operations (CRUD)

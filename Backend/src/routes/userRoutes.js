@@ -24,7 +24,7 @@ userRoutes
         result: result,
       });
     } catch (error) {
-      res.json({
+      res.status(400).json({
         success: false,
         message: `Err: ${error.message}`,
       });
@@ -40,7 +40,7 @@ userRoutes
             result: result
         })
     } catch(error){
-        res.json({
+        res.status(400).json({
             success: false,
             message: error.message
         });
@@ -59,7 +59,7 @@ userRoutes
             result: result
         })
     } catch(error){
-        res.json({
+        res.status(400).json({
             success: false,
             message: error.message
         })
@@ -74,7 +74,7 @@ userRoutes
             result: result
         })
     } catch(error){
-        res.json({
+        res.status(400).json({
             success: false,
             message: error.message
         })
@@ -89,7 +89,7 @@ userRoutes
             result: result
         })
     } catch(error){
-        res.json({
+        res.status(400).json({
             success: false,
             message: error.message
         })
